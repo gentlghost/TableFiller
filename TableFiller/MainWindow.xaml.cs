@@ -26,6 +26,7 @@ public partial class MainWindow : Window
     private readonly ContextMenu? cmCharacterInput;
 
     private string? currentPath = null;
+    private string? currentDirectory = null;
 
     public MainWindow()
     {
@@ -63,11 +64,14 @@ public partial class MainWindow : Window
             return;
         }
 
+        if (currentPath == null || currentDirectory == null)
+            return;
+
         MessageBox.Show(".TBL file completed.");
 
         if (System.IO.File.Exists(currentPath))
         {
-            Process.Start("explorer.exe", currentPath);
+            Process.Start("explorer.exe", currentDirectory);
         }
         else
         {
@@ -216,11 +220,12 @@ public partial class MainWindow : Window
         ClearTable();
 
         currentPath = null;
+        currentDirectory = null;
     }
 
     private bool SaveTable()
     {
-        if (currentPath == null)
+        if (currentPath == null || currentDirectory == null)
         { 
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.DefaultExt = ".tbl";
@@ -239,9 +244,13 @@ public partial class MainWindow : Window
                 // This needs to return true because the dialogue was successful - user just cancelled action.
                 return true;
             }
-            
+
             currentPath = dialog.FileName;
+            currentDirectory = System.IO.Path.GetDirectoryName(currentPath);
         }
+
+        if (currentPath == null)
+            return false;
 
         // Create a file
         using (StreamWriter file = new StreamWriter(currentPath))
@@ -286,6 +295,7 @@ public partial class MainWindow : Window
         ClearTable();
 
         currentPath = dialog.FileName;
+        currentDirectory = System.IO.Path.GetDirectoryName(currentPath);
         try
         {
             // Read the file
