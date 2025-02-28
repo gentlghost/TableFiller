@@ -1,0 +1,364 @@
+﻿<Window x:Class="TableFiller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TableFiller"
+        mc:Ignorable="d"
+        Title="TableFiller" Height="600" Width="600">
+    <Window.Resources>
+        <ContextMenu x:Key="CmCharacterInput">
+            <MenuItem Header="Copy (Ctrl + C)" Click="CopyItem_Click"/>
+            <MenuItem Header="Paste (Ctrl + V)" Click="PasteItem_Click"/>
+            <MenuItem Header="Automate">
+                <MenuItem Header="UPPERCASE LETTERS" Click="UppercaseItem_Click"/>
+                <MenuItem Header="lowercase letters" Click="LowercaseItem_Click"/>
+                <MenuItem Header="Numbers (0-9)" Click="NumberItem_Click"/>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Height="20">
+            <MenuItem Header="File">
+                <MenuItem Header="Save (Ctrl + S)" Click="Save_Click"/>
+                <MenuItem Header="Open (Ctrl + O)" Click="Load_Click"/>
+                <MenuItem Header="New (Ctrl + N)" Click="New_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid x:Name="grid1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <!--Column Labels-->
+            <Label Grid.Column="1">0</Label>
+            <Label Grid.Column="2">1</Label>
+            <Label Grid.Column="3">2</Label>
+            <Label Grid.Column="4">3</Label>
+            <Label Grid.Column="5">4</Label>
+            <Label Grid.Column="6">5</Label>
+            <Label Grid.Column="7">6</Label>
+            <Label Grid.Column="8">7</Label>
+            <Label Grid.Column="9">8</Label>
+            <Label Grid.Column="10">9</Label>
+            <Label Grid.Column="11">A</Label>
+            <Label Grid.Column="12">B</Label>
+            <Label Grid.Column="13">C</Label>
+            <Label Grid.Column="14">D</Label>
+            <Label Grid.Column="15">E</Label>
+            <Label Grid.Column="16">F</Label>
+            <!--Row Labels-->
+            <Label Grid.Row="1">0</Label>
+            <Label Grid.Row="2">1</Label>
+            <Label Grid.Row="3">2</Label>
+            <Label Grid.Row="4">3</Label>
+            <Label Grid.Row="5">4</Label>
+            <Label Grid.Row="6">5</Label>
+            <Label Grid.Row="7">6</Label>
+            <Label Grid.Row="8">7</Label>
+            <Label Grid.Row="9">8</Label>
+            <Label Grid.Row="10">9</Label>
+            <Label Grid.Row="11">A</Label>
+            <Label Grid.Row="12">B</Label>
+            <Label Grid.Row="13">C</Label>
+            <Label Grid.Row="14">D</Label>
+            <Label Grid.Row="15">E</Label>
+            <Label Grid.Row="16">F</Label>
+            <!--Text boxes-->
+            <TextBox x:Name="_00" Grid.Column="1" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_01" Grid.Column="2" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_02" Grid.Column="3" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_03" Grid.Column="4" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_04" Grid.Column="5" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_05" Grid.Column="6" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_06" Grid.Column="7" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_07" Grid.Column="8" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_08" Grid.Column="9" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_09" Grid.Column="10" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0A" Grid.Column="11" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0B" Grid.Column="12" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0C" Grid.Column="13" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0D" Grid.Column="14" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0E" Grid.Column="15" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_0F" Grid.Column="16" Grid.Row="1"></TextBox>
+            <TextBox x:Name="_10" Grid.Column="1" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_11" Grid.Column="2" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_12" Grid.Column="3" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_13" Grid.Column="4" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_14" Grid.Column="5" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_15" Grid.Column="6" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_16" Grid.Column="7" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_17" Grid.Column="8" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_18" Grid.Column="9" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_19" Grid.Column="10" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1A" Grid.Column="11" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1B" Grid.Column="12" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1C" Grid.Column="13" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1D" Grid.Column="14" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1E" Grid.Column="15" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_1F" Grid.Column="16" Grid.Row="2"></TextBox>
+            <TextBox x:Name="_20" Grid.Column="1" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_21" Grid.Column="2" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_22" Grid.Column="3" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_23" Grid.Column="4" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_24" Grid.Column="5" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_25" Grid.Column="6" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_26" Grid.Column="7" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_27" Grid.Column="8" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_28" Grid.Column="9" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_29" Grid.Column="10" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2A" Grid.Column="11" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2B" Grid.Column="12" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2C" Grid.Column="13" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2D" Grid.Column="14" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2E" Grid.Column="15" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_2F" Grid.Column="16" Grid.Row="3"></TextBox>
+            <TextBox x:Name="_30" Grid.Column="1" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_31" Grid.Column="2" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_32" Grid.Column="3" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_33" Grid.Column="4" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_34" Grid.Column="5" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_35" Grid.Column="6" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_36" Grid.Column="7" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_37" Grid.Column="8" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_38" Grid.Column="9" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_39" Grid.Column="10" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3A" Grid.Column="11" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3B" Grid.Column="12" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3C" Grid.Column="13" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3D" Grid.Column="14" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3E" Grid.Column="15" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_3F" Grid.Column="16" Grid.Row="4"></TextBox>
+            <TextBox x:Name="_40" Grid.Column="1" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_41" Grid.Column="2" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_42" Grid.Column="3" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_43" Grid.Column="4" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_44" Grid.Column="5" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_45" Grid.Column="6" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_46" Grid.Column="7" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_47" Grid.Column="8" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_48" Grid.Column="9" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_49" Grid.Column="10" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4A" Grid.Column="11" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4B" Grid.Column="12" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4C" Grid.Column="13" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4D" Grid.Column="14" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4E" Grid.Column="15" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_4F" Grid.Column="16" Grid.Row="5"></TextBox>
+            <TextBox x:Name="_50" Grid.Column="1" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_51" Grid.Column="2" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_52" Grid.Column="3" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_53" Grid.Column="4" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_54" Grid.Column="5" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_55" Grid.Column="6" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_56" Grid.Column="7" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_57" Grid.Column="8" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_58" Grid.Column="9" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_59" Grid.Column="10" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5A" Grid.Column="11" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5B" Grid.Column="12" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5C" Grid.Column="13" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5D" Grid.Column="14" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5E" Grid.Column="15" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_5F" Grid.Column="16" Grid.Row="6"></TextBox>
+            <TextBox x:Name="_60" Grid.Column="1" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_61" Grid.Column="2" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_62" Grid.Column="3" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_63" Grid.Column="4" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_64" Grid.Column="5" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_65" Grid.Column="6" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_66" Grid.Column="7" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_67" Grid.Column="8" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_68" Grid.Column="9" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_69" Grid.Column="10" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6A" Grid.Column="11" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6B" Grid.Column="12" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6C" Grid.Column="13" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6D" Grid.Column="14" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6E" Grid.Column="15" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_6F" Grid.Column="16" Grid.Row="7"></TextBox>
+            <TextBox x:Name="_70" Grid.Column="1" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_71" Grid.Column="2" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_72" Grid.Column="3" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_73" Grid.Column="4" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_74" Grid.Column="5" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_75" Grid.Column="6" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_76" Grid.Column="7" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_77" Grid.Column="8" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_78" Grid.Column="9" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_79" Grid.Column="10" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7A" Grid.Column="11" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7B" Grid.Column="12" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7C" Grid.Column="13" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7D" Grid.Column="14" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7E" Grid.Column="15" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_7F" Grid.Column="16" Grid.Row="8"></TextBox>
+            <TextBox x:Name="_80" Grid.Column="1" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_81" Grid.Column="2" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_82" Grid.Column="3" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_83" Grid.Column="4" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_84" Grid.Column="5" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_85" Grid.Column="6" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_86" Grid.Column="7" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_87" Grid.Column="8" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_88" Grid.Column="9" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_89" Grid.Column="10" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8A" Grid.Column="11" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8B" Grid.Column="12" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8C" Grid.Column="13" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8D" Grid.Column="14" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8E" Grid.Column="15" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_8F" Grid.Column="16" Grid.Row="9"></TextBox>
+            <TextBox x:Name="_90" Grid.Column="1" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_91" Grid.Column="2" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_92" Grid.Column="3" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_93" Grid.Column="4" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_94" Grid.Column="5" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_95" Grid.Column="6" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_96" Grid.Column="7" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_97" Grid.Column="8" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_98" Grid.Column="9" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_99" Grid.Column="10" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9A" Grid.Column="11" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9B" Grid.Column="12" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9C" Grid.Column="13" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9D" Grid.Column="14" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9E" Grid.Column="15" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_9F" Grid.Column="16" Grid.Row="10"></TextBox>
+            <TextBox x:Name="_A0" Grid.Column="1" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A1" Grid.Column="2" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A2" Grid.Column="3" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A3" Grid.Column="4" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A4" Grid.Column="5" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A5" Grid.Column="6" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A6" Grid.Column="7" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A7" Grid.Column="8" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A8" Grid.Column="9" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_A9" Grid.Column="10" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AA" Grid.Column="11" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AB" Grid.Column="12" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AC" Grid.Column="13" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AD" Grid.Column="14" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AE" Grid.Column="15" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_AF" Grid.Column="16" Grid.Row="11"></TextBox>
+            <TextBox x:Name="_B0" Grid.Column="1" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B1" Grid.Column="2" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B2" Grid.Column="3" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B3" Grid.Column="4" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B4" Grid.Column="5" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B5" Grid.Column="6" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B6" Grid.Column="7" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B7" Grid.Column="8" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B8" Grid.Column="9" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_B9" Grid.Column="10" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BA" Grid.Column="11" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BB" Grid.Column="12" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BC" Grid.Column="13" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BD" Grid.Column="14" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BE" Grid.Column="15" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_BF" Grid.Column="16" Grid.Row="12"></TextBox>
+            <TextBox x:Name="_C0" Grid.Column="1" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C1" Grid.Column="2" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C2" Grid.Column="3" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C3" Grid.Column="4" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C4" Grid.Column="5" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C5" Grid.Column="6" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C6" Grid.Column="7" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C7" Grid.Column="8" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C8" Grid.Column="9" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_C9" Grid.Column="10" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CA" Grid.Column="11" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CB" Grid.Column="12" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CC" Grid.Column="13" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CD" Grid.Column="14" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CE" Grid.Column="15" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_CF" Grid.Column="16" Grid.Row="13"></TextBox>
+            <TextBox x:Name="_D0" Grid.Column="1" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D1" Grid.Column="2" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D2" Grid.Column="3" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D3" Grid.Column="4" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D4" Grid.Column="5" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D5" Grid.Column="6" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D6" Grid.Column="7" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D7" Grid.Column="8" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D8" Grid.Column="9" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_D9" Grid.Column="10" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DA" Grid.Column="11" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DB" Grid.Column="12" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DC" Grid.Column="13" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DD" Grid.Column="14" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DE" Grid.Column="15" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_DF" Grid.Column="16" Grid.Row="14"></TextBox>
+            <TextBox x:Name="_E0" Grid.Column="1" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E1" Grid.Column="2" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E2" Grid.Column="3" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E3" Grid.Column="4" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E4" Grid.Column="5" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E5" Grid.Column="6" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E6" Grid.Column="7" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E7" Grid.Column="8" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E8" Grid.Column="9" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_E9" Grid.Column="10" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_EA" Grid.Column="11" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_EB" Grid.Column="12" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_EC" Grid.Column="13" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_ED" Grid.Column="14" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_EE" Grid.Column="15" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_EF" Grid.Column="16" Grid.Row="15"></TextBox>
+            <TextBox x:Name="_F0" Grid.Column="1" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F1" Grid.Column="2" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F2" Grid.Column="3" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F3" Grid.Column="4" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F4" Grid.Column="5" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F5" Grid.Column="6" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F6" Grid.Column="7" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F7" Grid.Column="8" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F8" Grid.Column="9" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_F9" Grid.Column="10" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FA" Grid.Column="11" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FB" Grid.Column="12" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FC" Grid.Column="13" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FD" Grid.Column="14" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FE" Grid.Column="15" Grid.Row="16"></TextBox>
+            <TextBox x:Name="_FF" Grid.Column="16" Grid.Row="16"></TextBox>
+            <!--Create Table Button-->
+            <Button x:Name="CreateTableBtn" Content="Create .tbl File" Grid.Row="17" Grid.Column="6" Grid.ColumnSpan="5" Margin="5" Click="CreateTableBtn_Click"/>
+        </Grid>
+    </DockPanel>
+</Window>
