@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\TF_Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\TF_Icon.ico" />
+  </ItemGroup>
+
 </Project>

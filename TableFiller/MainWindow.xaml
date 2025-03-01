@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TableFiller"
         mc:Ignorable="d"
-        Title="TableFiller" Height="600" Width="600">
+        Title="TableFiller" Height="600" Width="600" Icon="/Images/TF_Icon.ico">
     <Window.Resources>
         <ContextMenu x:Key="CmCharacterInput">
             <MenuItem Header="Copy (Ctrl + C)" Click="CopyItem_Click"/>
