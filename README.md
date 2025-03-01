@@ -1,3 +1,3 @@
 # TableFiller
 
-[Download]
+[Download]()
