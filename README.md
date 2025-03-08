@@ -1,4 +1,8 @@
 # TableFiller
 TableFiller is a .tbl generator for your NES and Famicom ROM hacking needs. It can map character tiles to characters, allowing for easier text editing and text abstraction.
-## Downloads
-[Download]()
+## Download
+[1.0.0](https://github.com/gentlghost/TableFiller/releases/tag/1.0.0)
+## Features
+- Automation for English alphabet letters and Arabic numbers.
+- Unicode input support.
+- Saving and loading .tbl files.
