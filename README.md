@@ -3,6 +3,6 @@ TableFiller is a .tbl generator for your NES and Famicom ROM hacking needs on Wi
 ## Download
 [1.0.0](https://github.com/gentlghost/TableFiller/releases/tag/1.0.0)
 ## Features
-- Automation for English alphabet letters and Arabic numbers.
+- Automation for English alphabet letters, Japanese Kana, and Arabic numbers.
 - Unicode input support.
 - Saving and loading .tbl files.
