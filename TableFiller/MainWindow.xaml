@@ -11,9 +11,19 @@
             <MenuItem Header="Copy (Ctrl + C)" Click="CopyItem_Click"/>
             <MenuItem Header="Paste (Ctrl + V)" Click="PasteItem_Click"/>
             <MenuItem Header="Automate">
-                <MenuItem Header="UPPERCASE LETTERS" Click="UppercaseItem_Click"/>
-                <MenuItem Header="lowercase letters" Click="LowercaseItem_Click"/>
                 <MenuItem Header="Numbers (0-9)" Click="NumberItem_Click"/>
+                <MenuItem Header="English Letters">
+                    <MenuItem Header="UPPERCASE LETTERS" Click="UppercaseItem_Click"/>
+                    <MenuItem Header="lowercase letters" Click="LowercaseItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Japanese Kana">
+                    <MenuItem Header="Hiragana (あいうえお)" Click="HiraganaItem_Click"/>
+                    <MenuItem Header="Hiragana　w/　Dakuten (゛゜)" Click="HiraganaDakutenItem_Click"/>
+                    <MenuItem Header="Hiragana Small (ぁぃぅぇぉ)" Click="HiraganaLittleItem_Click"/>
+                    <MenuItem Header="Katakana (アイウエオ)" Click="KatakanaItem_Click"/>
+                    <MenuItem Header="Katakana　w/　Dakuten (゛゜)" Click="KatakanaDakutenItem_Click"/>
+                    <MenuItem Header="Katakana Small (ァィゥェォ)" Click="KatakanaLittleItem_Click"/>
+                </MenuItem>
             </MenuItem>
         </ContextMenu>
     </Window.Resources>
