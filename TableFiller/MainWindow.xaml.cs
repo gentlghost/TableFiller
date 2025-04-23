@@ -135,17 +135,79 @@ public partial class MainWindow : Window
         AutomateCharacters('0', '9');
     }
 
-    private void AutomateCharacters(char starting, char ending)
+    private void HiraganaItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('あ', 'お', -1, 2);
+        start = AutomateCharacters('か', 'ち', start, 2);
+        start = AutomateCharacters('つ', 'と', start, 2);
+        start = AutomateCharacters('な', 'の', start);
+        start = AutomateCharacters('は', 'ほ', start, 3);
+        start = AutomateCharacters('ま', 'も', start);
+        start = AutomateCharacters('や', 'よ', start, 2);
+        start = AutomateCharacters('ら', 'ろ', start, 2);
+        start = AutomateCharacters('わ', 'わ', start);
+        AutomateCharacters('を', 'ん', start);
+    }
+
+    private void HiraganaDakutenItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('が', 'ぢ', -1, 2);
+        start = AutomateCharacters('づ', 'ど', start, 2);
+        start = AutomateCharacters('ば', 'ぼ', start, 3);
+        AutomateCharacters('ぱ', 'ぽ', start, 3);
+    }
+
+    private void HiraganaLittleItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('ぁ', 'ぉ', -1, 2);
+        start = AutomateCharacters('ゃ', 'ょ', start, 2);
+        AutomateCharacters('っ', 'っ', start);
+    }
+
+    private void KatakanaItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('ア', 'オ', -1, 2);
+        start = AutomateCharacters('カ', 'チ', start, 2);
+        start = AutomateCharacters('ツ', 'ト', start, 2);
+        start = AutomateCharacters('ナ', 'ノ', start);
+        start = AutomateCharacters('ハ', 'ホ', start, 3);
+        start = AutomateCharacters('マ', 'モ', start);
+        start = AutomateCharacters('ヤ', 'ヨ', start, 2);
+        start = AutomateCharacters('ラ', 'ロ', start, 2);
+        start = AutomateCharacters('ワ', 'ワ', start);
+        AutomateCharacters('ヲ', 'ン', start);
+    }
+
+    private void KatakanaDakutenItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('ガ', 'ヂ', offset: 2);
+        start = AutomateCharacters('ヅ', 'ド', start, 2);
+        start = AutomateCharacters('バ', 'ボ', start, 3);
+        AutomateCharacters('パ', 'ポ', start, 3);
+    }
+
+    private void KatakanaLittleItem_Click(object sender, RoutedEventArgs e)
+    {
+        int start = AutomateCharacters('ァ', 'ォ', -1, 2);
+        start = AutomateCharacters('ャ', 'ョ', start, 2);
+        AutomateCharacters('ッ', 'ッ', start);
+    }
+
+    private int AutomateCharacters(char starting, char ending, int startingIndex = -1, int offset = 1)
     {
         TextBox? targetTextBox = cmCharacterInput?.PlacementTarget as TextBox;
         if (targetTextBox == null)
-            return;
+        { 
+            return -1;    
+        }
 
-        int si = textBoxes.IndexOf(targetTextBox);
-        for (int i = si, letter = starting; letter <= ending; i++, letter++)
+        int i, letter, si = (startingIndex != -1)? startingIndex : textBoxes.IndexOf(targetTextBox);
+        for (i = si, letter = starting; letter <= ending; i++, letter += offset)
         {
             textBoxes[i].Text = "" + char.ConvertFromUtf32(letter);
         }
+
+        return i;
     }
 
     /// Menubar methods
